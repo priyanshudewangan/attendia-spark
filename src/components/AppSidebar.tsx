@@ -24,13 +24,14 @@ import {
 } from "@/components/ui/sidebar";
 
 const items = [
-  { title: "Dashboard", url: "/", icon: Home },
+  { title: "Dashboard", url: "/dashboard", icon: Home },
   { title: "Students", url: "/students", icon: Users },
   { title: "Attendance", url: "/attendance", icon: Calendar },
   { title: "Reports", url: "/reports", icon: BarChart3 },
   { title: "QR Attendance", url: "/qr-attendance", icon: QrCode },
   { title: "Export Data", url: "/export", icon: FileText },
   { title: "Settings", url: "/settings", icon: Settings },
+  {title: "QR Attendance", url: "/qr-attendance", icon: QrCode},
 ];
 
 export function AppSidebar() {
@@ -42,9 +43,9 @@ export function AppSidebar() {
 
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
-    isActive 
-      ? "bg-primary text-primary-foreground font-medium shadow-sm" 
-      : "hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors";
+  isActive
+    ? "bg-primary text-white font-medium shadow-sm"
+    : "hover:bg-muted/50 text-gray-800 transition-colors";
 
   return (
     <Sidebar
